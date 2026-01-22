@@ -1,0 +1,24 @@
+name: Linear Sync
+
+on:
+  issues:
+    types: [opened, closed]
+
+jobs:
+  sync-linear:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Create Linear Issue
+      if: github.event.action == 'opened'
+      run: |
+        curl -X POST https://api.linear.app/graphql \
+          -H "Authorization: ${{ secrets.LINEAR_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "query": "mutation { issueCreate(input: { teamId: \"VOTRE_TEAM_ID\", title: \"${{ github.event.issue.title }}\", description: \"${{ github.event.issue.body }}\" }) { success issue { id title } } }"
+          }'
+    
+    - name: Close Linear Issue
+      if: github.event.action == 'closed'
+      run: echo "Logic to close corresponding Linear issue"
