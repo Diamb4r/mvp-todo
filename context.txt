@@ -1,0 +1,29 @@
+Projet : MVP Todo List Web
+
+Objectif : Créer une application web simple pour gérer des tâches (Todo List) afin de démontrer une idée fonctionnelle (MVP). Le projet doit être accessible via navigateur et stocker les tâches localement.
+
+Fonctionnalités principales :
+1. Ajouter une nouvelle tâche.
+2. Lister toutes les tâches existantes.
+3. Supprimer une tâche en cliquant dessus.
+4. Les tâches doivent rester stockées même après fermeture du navigateur (localStorage).
+
+Technologies :
+- HTML pour la structure.
+- CSS pour le style simple.
+- JavaScript pour la logique et le stockage local.
+- Optionnel : serveur local pour tester (via Warp et `npx serve`).
+
+Structure des fichiers :
+/mvp-todo
+ ├─ index.html   (structure et interface)
+ ├─ style.css    (style simple)
+ └─ app.js       (logique des tâches, stockage local)
+
+Instructions pour tester :
+1. Ouvrir Warp dans le dossier du projet.
+2. Lancer : `npx serve .`
+3. Ouvrir l’URL fournie par le serveur local dans le navigateur.
+4. Ajouter, supprimer et vérifier que les tâches persistent après rafraîchissement.
+
+Objectif final : Fournir un MVP simple et fonctionnel de Todo List, testable localement, prêt à être versionné sur GitHub pour étapes suivantes d’automatisation (GitHub Actions, Slack, Linear).
